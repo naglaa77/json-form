@@ -4,6 +4,13 @@
     {
       "type": "Control",
       "scope": "#/properties/name"
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/selector",
+      "options": {
+        "multi": true
+      }
     }
   ]
 }

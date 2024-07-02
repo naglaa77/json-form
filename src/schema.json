@@ -4,7 +4,11 @@
     "name": {
       "type": "string",
       "minLength": 1
+    },
+    "selector": {
+      "type": "string",
+      "default": "bar"
     }
   },
-  "required": ["name", "due_date"]
+  "required": ["name", "selector"]
 }

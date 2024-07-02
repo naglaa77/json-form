@@ -7,14 +7,18 @@ import {
 } from '@jsonforms/material-renderers';
 import schema from './schema.json';
 import uischema from './uischema.json';
+import selectControlTester from "./selectControlTester";
+import selector from "./components/Selector";
 
 
 const initialData = {
     name: 'Naglaa FOUZ',
+    selector: ['Europe'],
 };
 
 const renderers = [
     ...materialRenderers,
+    { tester: selectControlTester, renderer: selector },
 ];
 
 function App() {
