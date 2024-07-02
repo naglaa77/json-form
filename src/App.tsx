@@ -1,24 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useMemo, useState} from 'react';
 import './App.css';
+import { JsonForms } from '@jsonforms/react';
+import {
+    materialCells,
+    materialRenderers,
+} from '@jsonforms/material-renderers';
+import schema from './schema.json';
+import uischema from './uischema.json';
+
+
+const initialData = {
+    name: 'Naglaa FOUZ',
+};
+
+const renderers = [
+    ...materialRenderers,
+];
 
 function App() {
-  return (
+    const [data, setData] = useState<object>(initialData);
+    const stringifiedData = useMemo(() => JSON.stringify(data, null, 2), [data]);
+
+    console.log("data", data)
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className="container">
+            <JsonForms
+                schema={schema}
+                uischema={uischema}
+                data={data}
+                renderers={renderers}
+                cells={materialCells}
+                onChange={({ data }) => setData(data)}
+            />
+        </div>
+
     </div>
   );
 }
