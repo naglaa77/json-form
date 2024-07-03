@@ -16,20 +16,6 @@ const NameUser = ({ data, handleChange, path }: CustomNameFieldProps) => {
             variant="outlined"
             value={data || ''}
             onChange={(event) => handleChange(path, event.target.value)}
-            sx={{
-                // Example of custom styling using sx prop
-                '& .MuiOutlinedInput-root': {
-                    '& fieldset': {
-                        borderColor: 'primary.main',
-                    },
-                    '&:hover fieldset': {
-                        borderColor: 'primary.dark',
-                    },
-                    '&.Mui-focused fieldset': {
-                        borderColor: 'secondary.main',
-                    },
-                },
-            }}
         />
     );
 };

@@ -39,7 +39,6 @@ const Selector = ({ data, handleChange, path }: RatingControlProps) => {
                 handleChange(path, value);
             }
         } else {
-            // For other reasons (e.g., "removeOption", "clear"), update normally
             setSelectedValues(value);
             handleChange(path, value);
         }
@@ -64,7 +63,6 @@ const Selector = ({ data, handleChange, path }: RatingControlProps) => {
         }
     };
 
-    // Flatten continents and countries for the options prop
     const options = continents.flatMap(group => [group.continent, ...group.countries]);
 
     return (
