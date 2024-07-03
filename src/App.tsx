@@ -9,11 +9,13 @@ import schema from './schema.json';
 import uischema from './uischema.json';
 import selectControlTester from "./selectControlTester";
 import selector from "./components/Selector";
+import { Typography } from '@mui/material';
+
 
 
 const initialData = {
     name: 'Naglaa FOUZ',
-    selector: ['Europe'],
+    selector: [],
 };
 
 const renderers = [
@@ -27,20 +29,23 @@ function App() {
 
     console.log("data", data)
     return (
-    <div className="App">
-        <div className="container">
-            <JsonForms
-                schema={schema}
-                uischema={uischema}
-                data={data}
-                renderers={renderers}
-                cells={materialCells}
-                onChange={({ data }) => setData(data)}
-            />
-        </div>
+        <div className="App"
+             style={{width: "100vw", boxSizing: "border-box", margin: "0", padding: "0"}}>
+            <div className="container">
+                <Typography variant="h3">Your Information</Typography>
 
-    </div>
-  );
+                <JsonForms
+                    schema={schema}
+                    uischema={uischema}
+                    data={data}
+                    renderers={renderers}
+                    cells={materialCells}
+                    onChange={({data}) => setData(data)}
+                />
+            </div>
+
+        </div>
+    );
 }
 
 export default App;

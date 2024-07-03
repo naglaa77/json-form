@@ -1,6 +1,39 @@
 .container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
-    border: 1px solid #ccc;
+    max-width: 700px;
+    margin: 12rem auto;
+    padding: 2rem;
+    border: 1px solid #cccccc75;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.css-953pxc-MuiInputBase-root-MuiInput-root{
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    padding: 10px;
+    border-radius: 4px;
+    border-bottom-width: 0;
+}
+.css-953pxc-MuiInputBase-root-MuiInput-root:hover{
+    border: 1px solid blue;
+}
+
+.css-953pxc-MuiInputBase-root-MuiInput-root:focus{
+    border: 1px solid blue;
+
+}
+
+.css-953pxc-MuiInputBase-root-MuiInput-root::before:focus{
+    border-bottom: 1px solid black;
+}
+
+.css-953pxc-MuiInputBase-root-MuiInput-root:hover:not(.Mui-disabled, .Mui-error):before {
+    border-bottom-width: 0;
+    outline: blue;
+}
+
+.css-1d1r5q-MuiFormHelperText-root{
+    display: none;
 }
