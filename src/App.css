@@ -9,6 +9,13 @@
     align-items: center;
     gap: 2rem;
 }
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1rem;
+    }
+}
 
 .css-953pxc-MuiInputBase-root-MuiInput-root{
     border: 1px solid rgba(0, 0, 0, 0.23);
@@ -17,23 +24,30 @@
     border-bottom-width: 0;
 }
 .css-953pxc-MuiInputBase-root-MuiInput-root:hover{
-    border: 1px solid blue;
+    border: 1px solid black !important;
 }
 
-.css-953pxc-MuiInputBase-root-MuiInput-root:focus{
-    border: 1px solid blue;
-
+.css-953pxc-MuiInputBase-root-MuiInput-root:focus-within{
+    border: 2px solid #1976d2 !important;
 }
 
 .css-953pxc-MuiInputBase-root-MuiInput-root::before:focus{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid blue !important;
 }
 
-.css-953pxc-MuiInputBase-root-MuiInput-root:hover:not(.Mui-disabled, .Mui-error):before {
-    border-bottom-width: 0;
-    outline: blue;
+.css-953pxc-MuiInputBase-root-MuiInput-root.Mui-error::before, .css-953pxc-MuiInputBase-root-MuiInput-root.Mui-error::after{
+    border-bottom-color: rgba(0, 0, 0, 0.23) !important;
+}
+
+.css-953pxc-MuiInputBase-root-MuiInput-root:hover:not(.Mui-disabled, .Mui-error):before,.css-953pxc-MuiInputBase-root-MuiInput-root:hover:not(.Mui-disabled, .Mui-error):after{
+    border-bottom: none !important;
 }
 
 .css-1d1r5q-MuiFormHelperText-root{
     display: none;
+}
+
+.css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root.Mui-error{
+    color: #00000082 !important;
+    padding: .5rem;
 }

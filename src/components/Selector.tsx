@@ -16,9 +16,11 @@ interface ContinentCountry {
 }
 
 const continents: ContinentCountry[] = [
-    { continent: "Europe", countries: ["Belgium", "France"] },
-    { continent: "Afrique", countries: ["Egypt", "Syria"] }
+    { continent: "Europe", countries: ["Belgium", "France", "Germany", "Italy", "Spain"] },
+    { continent: "Afrique", countries: ["Egypt", "Syria", "Algeria", "Morocco", "Tunisia"] },
+    { continent: "Asia", countries: ["China", "Japan", "India", "South Korea", "Indonesia"] }
 ];
+
 
 const Selector = ({ data, handleChange, path }: RatingControlProps) => {
     const [selectedValues, setSelectedValues] = useState<string[]>(data || []);

@@ -10,17 +10,19 @@ import uischema from './uischema.json';
 import selectControlTester from "./selectControlTester";
 import selector from "./components/Selector";
 import { Typography } from '@mui/material';
+import nameControlTester from "./nameControlTester";
 
 
 
 const initialData = {
-    name: 'Naglaa FOUZ',
+    nameUser: '',
     selector: [],
 };
 
 const renderers = [
     ...materialRenderers,
     { tester: selectControlTester, renderer: selector },
+    {tester: nameControlTester, renderer: 'NameUser'}
 ];
 
 function App() {
@@ -30,10 +32,10 @@ function App() {
     console.log("data", data)
     return (
         <div className="App"
-             style={{width: "100vw", boxSizing: "border-box", margin: "0", padding: "0"}}>
+             style={{width: "100vw", boxSizing: "border-box", margin: "0", padding: "1rem"}}>
             <div className="container">
-                <Typography variant="h3">Your Information</Typography>
 
+                <Typography variant="h4">Your Information</Typography>
                 <JsonForms
                     schema={schema}
                     uischema={uischema}
@@ -43,7 +45,7 @@ function App() {
                     onChange={({data}) => setData(data)}
                 />
             </div>
-
+            <pre>{stringifiedData}</pre>
         </div>
     );
 }
